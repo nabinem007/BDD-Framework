@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
+// Page object model for the facebook page
 public class Facebook {
     WebDriver driver;
 
