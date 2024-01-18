@@ -1,6 +1,7 @@
 package Objects;
 
 import org.bouncycastle.asn1.dvcs.DVCSObjectIdentifiers;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,9 +40,9 @@ public class Facebook {
     public void homePage() {
         try {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            String title = driver.getTitle();
-            System.out.println(title);
-            Assert.assertEquals(title, "Facebook");
+            String name = driver.findElement(By.xpath("//span[text()='Nabinn Cchetri']")).getText();
+            System.out.println(name);
+            Assert.assertEquals(name, "Nabinn Cchetri");
         } catch (Exception e) {
             System.out.println("Exception Caught " + e.getMessage());
         }
